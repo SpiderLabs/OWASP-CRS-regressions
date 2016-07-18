@@ -6,7 +6,8 @@
     description: "Description"
   tests: 
     - 
-      rule_id: 920100
+      # Standard GET request
+      rule_id: 920100-1
       stages: 
         - 
           stage: 
@@ -21,9 +22,29 @@
               uri: "/"
               version: "HTTP/1.1"
             output: 
-              status: 200
+              no_log_contains: "id \"920100\""
     - 
-      rule_id: 920100
+      # Request has tab (\t) before request method - Apache complains
+      # AH00126: Invalid URI in request      GET / HTTP/1.1
+      rule_id: 920100-2
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              method: "     GET"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+              protocol: "http"
+              uri: "/"
+              version: "HTTP/1.1"
+            output: 
+              status: 400           
+    - 
+      # Perfectly valid OPTIONS request
+      rule_id: 9201000-3
       stages: 
         - 
           stage: 
@@ -38,9 +59,10 @@
               uri: "*"
               version: "HTTP/1.1"
             output: 
-              status: 200
+              no_log_contains: "id \"920100\""
     - 
-      rule_id: 920100
+      # Valid CONNECT request however this is disabled by Apache default
+      rule_id: 920100-4
       stages: 
         - 
           stage: 
@@ -57,7 +79,8 @@
             output: 
               status: 405
     - 
-      rule_id: 920100
+      # invalid Connect request, domains require ports
+      rule_id: 920100-5
       stages: 
         - 
           stage: 
@@ -74,7 +97,8 @@
             output: 
               status: 400
     - 
-      rule_id: 920100
+      # This is an acceptable CONNECT request for SSL tunneling
+      rule_id: 920100-6
       stages: 
         - 
           stage: 
@@ -83,15 +107,16 @@
               method: "CONNECT"
               port: 80
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests # Catches Wrong Rule Update to Log View"              
+                  User-Agent: "ModSecurity CRS 3 Tests #FP"              
                   Host: "localhost"
               protocol: "http"
               uri: "www.cnn.com:80"
               version: "HTTP/1.1"
             output: 
-              status: 403              
+              log_contains: "id \"920100\""             
     - 
-      rule_id: 920100
+      # Valid request with query and anchor components
+      rule_id: 920100-7
       stages: 
         - 
           stage: 
@@ -106,9 +131,11 @@
               uri: "/index.html?I=Like&Apples=Today#tag"
               version: "HTTP/1.1"
             output: 
-              status: 200           
+              no_log_contains: "id \"920100\""         
     - 
-      rule_id: 920100
+      # The colon in the path is not allowed. Apache will block by default
+      # (20024)The given path is misformatted or contained invalid characters: [client 127.0.0.1:4142] AH00127: Cannot map GET /index.html:80?I=Like&Apples=Today#tag HTTP/1.1 to file
+      rule_id: 920100-8
       stages: 
         - 
           stage: 
@@ -125,7 +152,8 @@
             output: 
               status: 403
     - 
-      rule_id: 920100
+      # Normal Options request with path
+      rule_id: 920100-9
       stages: 
         - 
           stage: 
@@ -140,9 +168,10 @@
               uri: "/"
               version: "HTTP/1.1"
             output: 
-              status: 200   
+              no_log_contains: "id \"920100\""   
     - 
-      rule_id: 920100
+      # An invalid method with a long name
+      rule_id: 920100-10
       stages: 
         - 
           stage: 
@@ -151,10 +180,27 @@
               method: "REALLYLONGUNREALMETHOD"
               port: 80
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests # Doesn't trigger our rule"              
+                  User-Agent: "ModSecurity CRS 3 Tests # FN"              
                   Host: "localhost"
               protocol: "http"
               uri: "/"
               version: "HTTP/1.1"
             output: 
-              status: 403                 
+              log_contains: "id \"920100\""       
+    - 
+      # An invalid request because a backslash is used in uri
+      rule_id: 920100-11
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests # FN"              
+                  Host: "localhost"
+              protocol: "http"
+              uri: "\\"
+              version: "HTTP/1.1"
+            output: 
+              log_contains: "id \"920100\""               
