@@ -6,7 +6,7 @@ import re
 import os
 import ConfigParser
 
-def test_bar(ruleset, test, logchecker_obj):
+def test_crs(ruleset, test, logchecker_obj):
     runner = testrunner.TestRunner()
     for stage in test.stages:
         runner.run_stage(stage, logchecker_obj)
