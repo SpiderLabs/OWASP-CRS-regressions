@@ -6,7 +6,7 @@
     description: "Description"
   tests: 
     - 
-      rule_id: 920120
+      test_title: 920120
       stages: 
         - 
           stage: 
@@ -22,10 +22,13 @@
                   Connection: "close"
                   Referer: "http://localhost/"
                   Content-Type: "multipart/form-data; boundary=--------397236876"
-                  Content-Length: "930"
-              data: "----------397236876\nContent-Disposition: form-data; name=\"fileRap\"; filename=\"file=.txt\"\nContent-Type: text/plain\n\n\n555-555-0199@example.com\n----------397236876\n\n"
+              data:
+                - "----------397236876"
+                - "Content-Disposition: form-data; name=\"fileRap\"; filename=\"file=.txt\""
+                - "Content-Type: text/plain"
+                - ""
+                - "555-555-0199@example.com"
+                - "----------397236876--"
               protocol: "http"
-              uri: "/fileupload.asp"
             output: 
-              status: 403
-      
+              log_contains: "id \"920120\""
