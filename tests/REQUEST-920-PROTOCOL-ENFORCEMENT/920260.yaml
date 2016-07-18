@@ -1,0 +1,36 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "Tests-920260"
+    description: "Description"
+  tests: 
+    - 
+      rule_id: 920260
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              uri: "/?test=%uff0F"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"920260\""
+    - 
+      rule_id: 920260
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              uri: "/?test=%u0F"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+            output: 
+              status: 200
+

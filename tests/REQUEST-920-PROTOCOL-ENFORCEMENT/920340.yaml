@@ -1,0 +1,40 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "Tests-920340"
+    description: "Description"
+  tests: 
+    - 
+      rule_id: 920340
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Length: "2"
+              data: "xy"
+              stop_magic: true
+            output: 
+              log_contains: "id \"920340\""
+    - 
+      rule_id: 920340
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Length: "50"
+              stop_magic: true
+            output: 
+              status: 408              
+
+

@@ -1,0 +1,77 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "Tests-920200"
+    description: "Description"
+  tests: 
+    - 
+      rule_id: 920200
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+                  Range: "bytes=1-10,11-20,21-30,31-40,41-50,51-60"
+            output: 
+              log_contains: "id \"920200\""
+    - 
+      rule_id: 920200
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+                  Range: "bytes=1-10,   11-20, 21-30,   31-40, 41-50, 51-60"
+            output: 
+              log_contains: "id \"920200\""              
+    - 
+      rule_id: 920200
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests #FP"              
+                  Host: "localhost"
+                  Range: "bytes=-10,-, 21-30,31-40,41-50,51-500,"
+            output: 
+              log_contains: "id \"920200\""      
+    - 
+      rule_id: 920200
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests #FP"              
+                  Host: "localhost"
+                  Range: "bytes=1-,11-20, 21-30,31-40,41-50,51-500"
+            output: 
+              log_contains: "id \"920200\""
+    - 
+      rule_id: 920200
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests #FP"              
+                  Host: "localhost"
+                  Request-Range: "bytes=1-,11-20, 21-30,31-40,41-50,51-500"
+            output: 
+              log_contains: "id \"920200\""              

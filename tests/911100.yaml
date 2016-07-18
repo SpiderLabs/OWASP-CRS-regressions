@@ -1,0 +1,93 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "Tests-911100"
+    description: "Description"
+  tests: 
+    - 
+      rule_id: 911100
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"911100\""
+    - 
+      rule_id: 911100
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "OPTIONS"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"911100\""
+    - 
+      rule_id: 911100
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"911100\""
+    - 
+      rule_id: 911100
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              method: "HEAD"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"911100\""                                          
+    - 
+      rule_id: 911100
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              method: "POST"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Content-Type: "application/x-www-form-urlencoded"
+              data: "test=value"
+            output: 
+              log_contains: "id \"911100\""  
+    - 
+      rule_id: 911100
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              method: "TEST"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"911100\""                
+
+#   

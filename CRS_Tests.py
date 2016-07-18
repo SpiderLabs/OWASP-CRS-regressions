@@ -4,6 +4,7 @@ import pdb
 import sys
 import re
 import os
+import ConfigParser
 
 def test_bar(ruleset, test, logchecker_obj):
     runner = testrunner.TestRunner()
@@ -30,8 +31,9 @@ class FooLogChecker(logchecker.LogChecker):
 
     def get_logs(self):
         import datetime
-
-        log_location = 'C:\\Apache24\\logs\error.log'
+        config = ConfigParser.ConfigParser()
+        config.read("settings.ini")
+        log_location = config.get('settings', 'log_location')
         our_logs = []
         for lline in self.reverse_readline(log_location):
             # Extract dates from each line

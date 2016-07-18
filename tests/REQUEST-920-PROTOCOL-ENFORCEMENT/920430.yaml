@@ -1,0 +1,105 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "Tests-920430"
+    description: "Description"
+  tests: 
+    - 
+      rule_id: 920430
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              version: "HTTP/1.1"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              status: 200
+    - 
+      rule_id: 920430
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              version: "HTTP/1.0"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              status: 200
+    - 
+      rule_id: 920430
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              version: "HTTP/0.9"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"920430\""
+    - 
+      rule_id: 920430
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              version: "HTTP/2"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              status: 200    
+    - 
+      rule_id: 920430
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              version: ""
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests #FN"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"920430\""     
+    - 
+      rule_id: 920430
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              version: "1.1"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests #FN"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"920430\""
+    - 
+      rule_id: 920430
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              version: "TEST"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+            output: 
+              log_contains: "id \"920430\""                                                      

@@ -1,0 +1,60 @@
+---
+  meta: 
+    author: "csanders-git"
+    enabled: true
+    name: "Tests-920240"
+    description: "Description"
+  tests: 
+    - 
+      rule_id: 920240
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "POST"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+                  Content-Type: "application/x-www-form-urlencoded"
+                  Content-Length: 11
+              data: "x=new %w20$"
+              stop_magic: true
+            output: 
+              log_contains: "id \"920240\""
+    - 
+      rule_id: 920240
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "POST"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests #FN This should Trigger"              
+                  Host: "localhost%00"
+                  Content-Type: "application/x-www-form-urlencoded"
+                  Content-Length: 10
+              data: "x=new %20$"
+              stop_magic: true
+            output: 
+              status: 200     
+    - 
+      rule_id: 920240
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              method: "POST"
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+                  Content-Type: "application/x-www-form-urlencoded"
+              data: "param=value"
+            output: 
+              status: 200                     
+                             
