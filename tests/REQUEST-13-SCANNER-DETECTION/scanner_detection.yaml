@@ -1,0 +1,1930 @@
+---
+  meta:
+    author: "msc_testgen"
+    source: "REQUEST-13-SCANNER-DETECTION.conf"
+    enabled: true
+    description: "description"
+  tests:
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "(hydra)"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: ".nasl"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "absinthe"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "advanced email extractor"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "arachni/"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "autogetcontent"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "bilbo"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "black widow"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "blackwidow"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "brutus"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "brutus/aet"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "bsqlbf"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "cgichk"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "cisco-torch"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "core-project/1.0"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "crimscanner/"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "datacha0s"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "dav.pm/v"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "dirbuster"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "domino hunter"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "dotdotpwn"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "email extractor"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "fhscan core 1."
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "floodgate"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "get-minimal"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "gootkit auto-rooter scanner"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "grabber"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "grendel-scan"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "havij"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "inspath [path disclosure finder"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "internet ninja"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "jaascois"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "zmeu"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "LWP"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "masscan"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "metis"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "morfeus fucking scanner"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "mozilla/4.0 (compatible)"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "mozilla/4.0 (compatible; msie 6.0; win32)"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "mozilla/5.0 sf/"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "mozilla/5.0 sf//"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "mysqloit"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "n-stealth"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "nessus"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "netsparker"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "nikto"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "nmap nse"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "nmap scripting engine"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "nmap-nse"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "nsauditor"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "openvas"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "pangolin"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "paros"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "pmafind"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "prog.customcrawler"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "prowebwalker"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "pymills-spider/"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "python-httplib2"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "python-requests"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "Python-urllib"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "qualys was"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "s.t.a.l.k.e.r."
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "security scan"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "springenwerk"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "sql power injector"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "sqlmap"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "sqlninja"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "teh forest lobster"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "this is an exploit"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "toata dragostea"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "toata dragostea mea pentru diavola"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "uil2pn"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "user-agent:"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "vega/"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "voideye"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "w3af.sf.net"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "w3af.sourceforge.net"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "webbandit"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "webinspect"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "webshag"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "webtrends security analyzer"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "webvulnscan"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "whatweb"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "whcc/"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "winhttp.winhttprequest.5"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "wordpress hash grabber"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "wordpress/4.01"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "xmlrpc exploit"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "AhrefsBot"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "PiplBot"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "GrapeshotCrawler/2.0"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "grapeFX"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913100
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-Agent: "SearchmetricsBot"
+            output:
+              log_contains: "[id \"913100\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  Bogosity: "acunetix-product"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  Bogosity: "(acunetix web vulnerability scanner"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  Bogosity: "acunetix-scanning-agreement"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  Bogosity: "acunetix-user-agreement"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  Bogosity: "myvar=1234"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  Bogosity: "x-ratproxy-loop"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  Bogosity: "bytes=0-,5-0,5-1,5-2,5-3,5-4,5-5,5-6,5-7,5-8,5-9,5-10,5-11,5-12,5-13,5-14"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913110
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  Bogosity: "X-Scanner"
+            output:
+              log_contains: "[id \"913110\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/.adSensepostnottherenonobook"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/<invalid>hello.html"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/actSensepostnottherenonotive"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/acunetix-wvs-test-for-some-inexistent-file"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/antidisestablishmentarianism"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/appscan_fingerprint/mac_address"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/arachni-"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/cybercop"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/nessus_is_probing_you_"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/nessustest"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/netsparker-"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/rfiinc.txt"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/thereisnowaythat-you-canbethere"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "/w3af/remotefileinclude.html"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
+   -
+      rule_id: 913120
+      desc: "Request Indicates a Security Scanner Scanned the Site"
+      stages:
+      - stage:
+            input:
+              method: "GET"
+              port: 80
+              uri: "appscan_fingerprint"
+              headers:
+                  Host: "localhost"
+            output:
+              log_contains: "[id \"913120\"]"
+              status: 403
