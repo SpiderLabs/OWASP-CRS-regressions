@@ -2,11 +2,11 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920120"
-    description: "Description"
+    name: "920120.yaml"
+    description: "Tests to trigger rule 920120"
   tests: 
     - 
-      test_title: 920120
+      test_title: 920120-1
       stages: 
         - 
           stage: 

@@ -6,7 +6,7 @@
     description: "Description"
   tests: 
     - 
-      rule_id: 911100
+      test_title: 911100
       stages: 
         - 
           stage: 
@@ -19,7 +19,7 @@
             output: 
               log_contains: "id \"911100\""
     - 
-      rule_id: 911100
+      test_title: 911100
       stages: 
         - 
           stage: 
@@ -33,7 +33,7 @@
             output: 
               log_contains: "id \"911100\""
     - 
-      rule_id: 911100
+      test_title: 911100
       stages: 
         - 
           stage: 
@@ -46,7 +46,7 @@
             output: 
               log_contains: "id \"911100\""
     - 
-      rule_id: 911100
+      test_title: 911100
       stages: 
         - 
           stage: 
@@ -60,7 +60,7 @@
             output: 
               log_contains: "id \"911100\""                                          
     - 
-      rule_id: 911100
+      test_title: 911100
       stages: 
         - 
           stage: 
@@ -76,7 +76,7 @@
             output: 
               log_contains: "id \"911100\""  
     - 
-      rule_id: 911100
+      test_title: 911100
       stages: 
         - 
           stage: 

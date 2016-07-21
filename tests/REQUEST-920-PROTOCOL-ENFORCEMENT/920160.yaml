@@ -2,11 +2,12 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920160"
-    description: "Description"
+    name: "920160.yaml"
+    description: "Tests to trigger rule 920160"
   tests: 
     - 
-      rule_id: 920160
+      # Non digit Content-Length without content-type
+      test_title: 920160-1
       stages: 
         - 
           stage: 
@@ -23,7 +24,8 @@
             output: 
               status: 400
     - 
-      rule_id: 920160
+      # Non digit content-length with content-type
+      test_title: 920160-2
       stages: 
         - 
           stage: 
@@ -41,7 +43,8 @@
             output: 
               status: 400  
     - 
-      rule_id: 920160
+      # Mixed digit and non digit content length
+      test_title: 920160-3
       stages: 
         - 
           stage: 

@@ -2,11 +2,12 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920170"
-    description: "Description"
+    name: "920170.yaml"
+    description: "A Selection of tests to trigger rule 920170"
   tests: 
     - 
-      rule_id: 920170
+      # POST Request with data (valid)
+      test_title: 920170-1
       stages: 
         - 
           stage: 
@@ -18,70 +19,13 @@
                   User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
                   Content-Type: "application/x-www-form-urlencoded"
-                  Content-Length: "3"
               data: "hi=test"
-              protocol: "http"
               uri: "/"
             output: 
-              status: 200
+              no_log_contains: "id \"920170\""
     - 
-      rule_id: 920170
-      stages: 
-        - 
-          stage: 
-            input:
-              dest_addr: "127.0.0.1"
-              method: "GET"
-              port: 80
-              headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"              
-                  Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded"
-                  Content-Length: "3"
-              data: "hi=test"
-              protocol: "http"
-              uri: "/"
-            output: 
-              status: 403       
-    - 
-      rule_id: 920170
-      stages: 
-        - 
-          stage: 
-            input:
-              dest_addr: "127.0.0.1"
-              method: "HEAD"
-              port: 80
-              headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"              
-                  Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded"
-                  Content-Length: "3"
-              data: "hi=test"
-              protocol: "http"
-              uri: "/"
-            output: 
-              status: 403      
-    - 
-      rule_id: 920170
-      stages: 
-        - 
-          stage: 
-            input:
-              dest_addr: "127.0.0.1"
-              method: "HEAD"
-              port: 80
-              headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"              
-                  Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded"
-              data: "hi=test"
-              protocol: "http"
-              uri: "/"
-            output: 
-              status: 403       
-    - 
-      rule_id: 920170
+      # GET request with data
+      test_title: 920170-2
       stages: 
         - 
           stage: 
@@ -94,12 +38,31 @@
                   Host: "localhost"
                   Content-Type: "application/x-www-form-urlencoded"
               data: "hi=test"
-              protocol: "http"
               uri: "/"
             output: 
-              status: 403
+              log_contains: "id \"920170\""      
     - 
-      rule_id: 920170
+      # Head Request with data
+      test_title: 920170-3
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              method: "HEAD"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+                  Content-Type: "application/x-www-form-urlencoded"
+              data: "hi=test"
+              uri: "/"
+            output: 
+              log_contains: "id \"920170\""
+    - 
+      # GET Request but content length is 0 and data is provided
+      # Weird HTTP 1.0 support bug in Apache, without newline causes 408
+      test_title: 920170-5
       stages: 
         - 
           stage: 
@@ -112,13 +75,15 @@
                   Host: "localhost"
                   Content-Type: "application/x-www-form-urlencoded"
                   Content-Length: "0"
-              data: "hi=test"
+              data: "hi=test\r\n"
+              stop_magic: true
               protocol: "http"
               uri: "/"
             output: 
-              status: 200        
+              no_log_contains: "id \"920170\""      
     - 
-      rule_id: 920170
+      # GET request with content length 0 and no data.
+      test_title: 920170-6
       stages: 
         - 
           stage: 
@@ -135,4 +100,5 @@
               protocol: "http"
               uri: "/"
             output: 
-              status: 200                                                                              
+              no_log_contains: "id \"920170\""                                                                             
+              

@@ -6,7 +6,7 @@
     description: "Description"
   tests: 
     - 
-      rule_id: 920350
+      test_title: 920350
       stages: 
         - 
           stage: 
@@ -22,7 +22,7 @@
             output: 
               status: 403
     - 
-      rule_id: 920350
+      test_title: 920350
       stages: 
         - 
           stage: 
@@ -38,7 +38,7 @@
             output: 
               status: 200
     - 
-      rule_id: 920350
+      test_title: 920350
       stages: 
         - 
           stage: 

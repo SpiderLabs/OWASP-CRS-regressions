@@ -6,7 +6,7 @@
     description: "Description"
   tests: 
     - 
-      rule_id: 920220
+      test_title: 920220
       stages: 
         - 
           stage: 
@@ -20,7 +20,7 @@
             output: 
               log_contains: "id \"920220\""
     - 
-      rule_id: 920220
+      test_title: 920220
       stages: 
         - 
           stage: 
@@ -34,7 +34,7 @@
             output: 
               status: 200
     - 
-      rule_id: 920220
+      test_title: 920220
       stages: 
         - 
           stage: 
