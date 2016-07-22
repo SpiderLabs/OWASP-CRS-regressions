@@ -20,9 +20,8 @@
               uri: "/"
             output:
               log_contains: "id \"921100\""
-              status: 501
-   # NB: still need a test for rule 921110
-   -
+    # NB: still need a test for rule 921110
+    -
       test_title: "HTTP Response splitting attack: rule 921120"
       stages:
         -
@@ -35,9 +34,7 @@
                   Host: "localhost"
               uri: "/file.jsp?somevar=foobar%0d%0aContent-Length:%2002343432423<html>ftw</html>"
             output:
-              status: 404
               log_contains: "id \"921120\""
-
     -
       test_title: "HTTP Response splitting attack: rule 921130"
       stages:
@@ -84,7 +81,6 @@
                   User-agent: "user agent"
               uri: "/script.jsp?variableX=bar&variable2=Y&%0d%0restofdata"
             output:
-              status: 404
               log_contains: "id \"921150\""
     -
       test_title: "HTTP Header Injection Attack via payload: w/header detected rule: 921160"
@@ -102,7 +98,6 @@
               #uri: "/script_rule921160.jsp?variableX=bar&variable2=Y&%0d%0X-Forwarded-Host:%20foo.bar.com
               uri: "/script_rule921160.jsp?variableX=bar&variable2=Y&%0d%0Remote-addr%0d%0d%0d:%20foo.bar.com"
             output:
-              status: 404
               log_contains: "id \"921160\""
     -
       test_title: "HTTP Header Injection Attack via payload: POST 921170"
@@ -118,6 +113,4 @@
               uri: "/someform.jsp"
               data: "variableX=bar&variable2=Y&var=sdfdsf&sdfds=%0d%0d%0d%0d%0a%0a%0Response_splitt_payload=restofdata"
             output:
-              status: 404
               log_contains: "id \"921170\""
-
