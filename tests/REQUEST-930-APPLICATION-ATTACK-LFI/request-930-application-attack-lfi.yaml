@@ -1,0 +1,55 @@
+---
+  meta: 
+    author: "Christian S.J. Peron"
+    enabled: true
+    name: "request-930-application-attack-lfi.yaml"
+    description: "Application attacks: Local file include"
+  tests: 
+    -
+      test_title: "Path Traversal Attack (/../) encoded"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  FoobarHeader: "0x5c0x2e.%00/"
+              uri: "/"
+            output:
+              log_contains: "930100"
+              status: 200
+    -
+      test_title: "Path Traversal Attack (/../)"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  FoobarHeader: "/../../../././..\\ ../../etc/master.passwd"
+              uri: "/"
+            output:
+              log_contains: "930110"
+              status: 200
+
+    -
+      test_title: "OS File Access"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+              uri: "/?foo=arg&path_comp=.ssh/id_rsa"
+            output:
+              log_contains: "930120"
+              status: 200
