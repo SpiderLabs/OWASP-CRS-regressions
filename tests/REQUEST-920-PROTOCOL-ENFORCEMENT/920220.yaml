@@ -2,11 +2,12 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920220"
-    description: "Description"
+    name: "920220.yaml"
+    description: "Tests to trigger rule 920220"
   tests: 
     - 
-      test_title: 920220
+      # This gets a percent but not a number after, invalid
+      test_title: 920220-1
       stages: 
         - 
           stage: 
@@ -20,7 +21,8 @@
             output: 
               log_contains: "id \"920220\""
     - 
-      test_title: 920220
+      # We have a valid percent encoding here
+      test_title: 920220-2
       stages: 
         - 
           stage: 
@@ -32,9 +34,10 @@
                   User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
             output: 
-              status: 200
+              no_log_contains: "id \"920220\""
     - 
-      test_title: 920220
+      # url encoding includes spaces as plusses, this is valid
+      test_title: 920220-3
       stages: 
         - 
           stage: 
@@ -46,4 +49,4 @@
                   User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
             output: 
-              status: 200              
+              no_log_contains: "id \"920220\""

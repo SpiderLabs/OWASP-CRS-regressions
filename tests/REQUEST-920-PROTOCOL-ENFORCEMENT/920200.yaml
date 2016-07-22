@@ -2,11 +2,11 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920200"
+    name: "920200.yaml"
     description: "Description"
   tests: 
     - 
-      test_title: 920200
+      test_title: 920200-1
       stages: 
         - 
           stage: 
@@ -20,7 +20,23 @@
             output: 
               log_contains: "id \"920200\""
     - 
-      test_title: 920200
+      # Sample taken from https://github.com/alienwithin/php-utilities/blob/master/apache-byte-range-server-dos/apache_byte_range_server_dos.php      
+      test_title: 920200-2
+      stages: 
+        - 
+          stage: 
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"              
+                  Host: "localhost"
+                  Request-Range: "bytes=5-0,1-1,2-2,3-3,4-4,5-5,6-6,7-7,8-8,9-9,10-10,11-11"
+            output: 
+              log_contains: "id \"920200\""
+'             
+    - 
+      test_title: 920200-3
       stages: 
         - 
           stage: 
@@ -34,7 +50,7 @@
             output: 
               log_contains: "id \"920200\""              
     - 
-      test_title: 920200
+      test_title: 920200-4
       stages: 
         - 
           stage: 
@@ -48,7 +64,7 @@
             output: 
               log_contains: "id \"920200\""      
     - 
-      test_title: 920200
+      test_title: 920200-5
       stages: 
         - 
           stage: 
@@ -62,7 +78,7 @@
             output: 
               log_contains: "id \"920200\""
     - 
-      test_title: 920200
+      test_title: 920200-6
       stages: 
         - 
           stage: 

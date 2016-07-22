@@ -2,11 +2,11 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920210"
-    description: "Description"
+    name: "920210.yaml"
+    description: "Tests that trigger rule 920210"
   tests: 
     - 
-      test_title: 920210
+      test_title: 920210-1
       stages: 
         - 
           stage: 
@@ -18,9 +18,9 @@
                   Host: "localhost"
                   Connection: "keep-alive"
             output: 
-              status: 200
+              no_log_contains: "id \"920210\""
     - 
-      test_title: 920210
+      test_title: 920210-2
       stages: 
         - 
           stage: 
@@ -34,7 +34,7 @@
             output: 
               log_contains: "id \"920210\""
     - 
-      test_title: 920210
+      test_title: 920210-3
       stages: 
         - 
           stage: 
@@ -48,7 +48,7 @@
             output: 
               log_contains: "id \"920210\""
     - 
-      test_title: 920210
+      test_title: 920210-4
       stages: 
         - 
           stage: 
@@ -62,7 +62,7 @@
             output: 
               log_contains: "id \"920210\""       
     - 
-      test_title: 920210
+      test_title: 920210-5
       stages: 
         - 
           stage: 
@@ -74,4 +74,4 @@
                   Host: "localhost"
                   Connection: "User-Agent"
             output: 
-              status: 200                                    
+              no_log_contains: "id \"920210\""                                

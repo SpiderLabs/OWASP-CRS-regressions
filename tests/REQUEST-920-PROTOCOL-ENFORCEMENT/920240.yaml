@@ -2,7 +2,7 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920240"
+    name: "920240.yaml"
     description: "Description"
   tests: 
     - 
@@ -40,7 +40,7 @@
               data: "x=new %20$"
               stop_magic: true
             output: 
-              status: 200     
+              no_log_contains: "id \"920240\""     
     - 
       test_title: 920240
       stages: 
@@ -56,5 +56,5 @@
                   Content-Type: "application/x-www-form-urlencoded"
               data: "param=value"
             output: 
-              status: 200                     
+              no_log_contains: "id \"920240\""                   
                              
