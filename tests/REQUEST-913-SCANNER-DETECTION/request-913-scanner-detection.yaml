@@ -1,0 +1,52 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    enabled: true
+    name: "request-913-scanner-detection.yaml"
+    description: "Generate tests for common scanners"
+  tests:
+    -
+      test_title: "Scanner identification based on User-agent field: rule 913100"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-agent: "nessus"
+              uri: "/"
+            output:
+              log_contains: "id \"913100\""
+    -
+      test_title: "Scanner identification based on custom header: rule 913110"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  X-Scanner: "whatever"
+              uri: "/"
+            output:
+              log_contains: "id \"913110\""
+
+    -
+      test_title: "Scanner identification based on uri: rule 913120"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+              uri: "/nessustest"
+            output:
+              log_contains: "id \"913120\""
