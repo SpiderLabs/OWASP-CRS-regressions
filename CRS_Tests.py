@@ -5,8 +5,6 @@ import sys
 import re
 import os
 import ConfigParser
-from time import sleep
-
 
 def test_crs(ruleset, test, logchecker_obj):
     runner = testrunner.TestRunner()
