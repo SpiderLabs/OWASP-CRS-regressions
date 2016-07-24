@@ -1,0 +1,21 @@
+meta:
+  author: csanders-git
+  description: None
+  enabled: true
+  name: TEST.yaml
+tests:
+- stages:
+  - stage:
+      input:
+        headers:
+          Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+          Host: localhost
+          Keep-Alive: '300'
+          Proxy-Connection: keep-alive
+          User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv
+        method: "\tGET"
+        uri: /
+        version: HTTP/1.1
+      output:
+        status: 200
+  test_title: title1

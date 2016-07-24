@@ -2,11 +2,11 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920310"
+    name: "920310.yaml"
     description: "Description"
   tests: 
     - 
-      test_title: 920310
+      test_title: 920310-1
       stages: 
         - 
           stage: 
@@ -20,7 +20,7 @@
             output: 
               log_contains: "id \"920310\""
     - 
-      test_title: 920310
+      test_title: 920310-2
       stages: 
         - 
           stage: 
@@ -33,9 +33,9 @@
                   Host: "localhost"
                   Accept: ""
             output: 
-              status: 200           
+              no_log_contains: "id \"920310\""        
     - 
-      test_title: 920310
+      test_title: 920310-3
       stages: 
         - 
           stage: 
@@ -47,5 +47,5 @@
                   Host: "localhost"
                   Accept: ""
             output: 
-              status: 200                       
+              no_log_contains: "id \"920310\""                     
   

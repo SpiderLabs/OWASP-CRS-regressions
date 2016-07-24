@@ -2,7 +2,7 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920230"
+    name: "920230.yaml"
     description: "Description"
   tests: 
     - 

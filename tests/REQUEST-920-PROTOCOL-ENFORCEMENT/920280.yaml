@@ -2,11 +2,11 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920270"
+    name: "920280.yaml"
     description: "Description"
   tests: 
     - 
-      test_title: 920280
+      test_title: 920280-1
       stages: 
         - 
           stage: 
@@ -18,7 +18,7 @@
             output: 
               log_contains: "id \"920280\""
     - 
-      test_title: 920280
+      test_title: 920280-2
       stages: 
         - 
           stage: 
@@ -29,9 +29,9 @@
                   User-Agent: "ModSecurity CRS 3 Tests"
                   Host: "localhost"
             output: 
-              status: 200     
+              no_log_contains: "id \"920280\""     
     - 
-      test_title: 920280
+      test_title: 920280-3
       stages: 
         - 
           stage: 

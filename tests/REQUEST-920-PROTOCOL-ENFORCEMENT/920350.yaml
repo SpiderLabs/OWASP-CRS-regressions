@@ -2,11 +2,11 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920350"
+    name: "920350.yaml"
     description: "Description"
   tests: 
     - 
-      test_title: 920350
+      test_title: 920350-1
       stages: 
         - 
           stage: 
@@ -20,9 +20,9 @@
               protocol: "http"
               uri: "/"
             output: 
-              status: 403
+              log_contains: "id \"920350\""
     - 
-      test_title: 920350
+      test_title: 920350-2
       stages: 
         - 
           stage: 
@@ -36,9 +36,9 @@
               protocol: "http"
               uri: "/"
             output: 
-              status: 200
+              no_log_contains: "id \"920350\""
     - 
-      test_title: 920350
+      test_title: 920350-3
       stages: 
         - 
           stage: 
@@ -52,4 +52,4 @@
               protocol: "http"
               uri: "/"
             output: 
-              status: 403              
+              log_contains: "id \"920350\""              
