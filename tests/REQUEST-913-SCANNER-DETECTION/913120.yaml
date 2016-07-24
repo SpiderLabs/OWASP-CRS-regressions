@@ -30,3 +30,18 @@
           version: HTTP/1.0
         output:
           log_contains: id "913120"
+  -
+    test_title: 913120-2
+    desc: IBM fingerprint from (http://www-01.ibm.com/support/docview.wss?uid=swg21293132)
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            User-Agent: "ModSecurity CRS 3 Tests"
+            Host: localhost
+          uri: /AppScan_fingerprint/MAC_ADDRESS_01234567890.html?9ABCDG1
+          version: HTTP/1.0
+        output:
+          log_contains: id "913120"          

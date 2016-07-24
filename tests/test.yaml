@@ -16,28 +16,8 @@
               port: 80
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"              
-                  Host: "127.0.0.1"
+                  Host: "localhost"
               protocol: "http"
               uri: "/"
             output: 
-              log_contains: "id \"920350\""
-    - 
-      test_title: 920170-5
-      stages: 
-        - 
-          stage: 
-            input:
-              dest_addr: "www.rit.edu"
-              method: "POST"
-              port: 80
-              headers:
-                  User-Agent: "ModSecurity CRS 3 Tests # Possibly shouldn't pass"              
-                  Host: "www.rit.edu"
-                  Content-Type: "application/x-www-form-urlencoded"
-                  Content-Length: "0"
-              data: "hi=test"
-              stop_magic: true
-              protocol: "http"
-              uri: "/"
-            output: 
-              no_log_contains: "id \"920170\""  
+              status: 200

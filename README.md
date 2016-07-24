@@ -14,18 +14,34 @@ The OWASP Core Rule Set project was part of the effort to develop FTW, the Frame
 
 This will install FTW as a library. It can also be run natively, see the FTW documentation for more detail.
 
+Requirements
+============
+There are Three requirements for running the OWASP CRS regressions.
+
+1. You must have ModSecurity specify the location of your error.log, this is done in the settings.ini file
+2. ModSecurity must be in DetectionOnly (or anomaly scoring) mode
+3. You must disable IP blocking based on previous events
+
+To accomplish 2. and 3. you may use the following rule in your setup.conf:
+
+```SecAction "id:900005,phase:1,nolog,pass,ctl:ruleEngine=DetectionOnly,ctl:ruleRemoveById=910000"```
+
+Once these requirements have been met the tests can be run by using pytest.
+
 Running The Tests
 =================
-There are two requirements for running the OWASP CRS regressions.
-
-1. You must have ModSecurity specify the location of your error.log.
-2. You must configure your SecDefaultAction to include both log and pass, enabling anomaly mode.
-
-Once these requirments have been met the tests can be run by using pytest.
 
 On Windows this will look like:
+-------------------------------
+Single Rule File:
 ```py.test.exe -v CRS_Tests.py --rule=tests/test.yaml```
+The Whole Suite:
+```py.test.exe -v CRS_Tests.py --ruledir_recurse=tests/```
 
 On Linux this will look like:
+-----------------------------
+Single Rule File:
 ```py.test -v CRS_Tests.py --rule=tests/test.yaml```
+The Whole Suite:
+```py.test -v CRS_Tests.py --ruledir_recurse=tests/```
 

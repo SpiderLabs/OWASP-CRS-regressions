@@ -6,7 +6,7 @@
     description: "Description"
   tests: 
     - 
-      test_title: 920450
+      test_title: 920450-1
       stages: 
         - 
           stage: 
@@ -20,7 +20,7 @@
             output: 
               log_contains: "id \"920450\""
     - 
-      test_title: 920450
+      test_title: 920450-2
       stages: 
         - 
           stage: 
@@ -34,7 +34,7 @@
             output: 
               log_contains: "id \"920450\""              
     - 
-      test_title: 920450
+      test_title: 920450-3
       stages: 
         - 
           stage: 
@@ -48,7 +48,7 @@
             output: 
               log_contains: "id \"920450\""                
     - 
-      test_title: 920450
+      test_title: 920450-4
       stages: 
         - 
           stage: 
@@ -63,7 +63,7 @@
               log_contains: "id \"920450\""                
 
     - 
-      test_title: 920450-1
+      test_title: 920450-5
       desc: HTTP header is restricted by policy (920450) from old modsec regressions
       stages:
       - 
@@ -87,7 +87,7 @@
             log_contains: id "920450"
 
     - 
-      test_title: 920450-1
+      test_title: 920450-6
       desc: HTTP header is restricted by policy (920450) from old modsec regressions
       stages:
       - 
@@ -112,7 +112,7 @@
             log_contains: id "920450"
 
     - 
-      test_title: 920450-1
+      test_title: 920450-7
       desc: HTTP header is restricted by policy (920450) from old modsec regressions
       stages:
       - 
