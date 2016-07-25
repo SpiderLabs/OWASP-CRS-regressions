@@ -31,3 +31,19 @@
           version: HTTP/1.0
         output:
           log_contains: id "913110"
+  -
+    test_title: 913110-2
+    desc: "Scanner identification based on custom header"
+    stages:
+     -
+      stage:
+        input:
+          dest_addr: "127.0.0.1"
+          method: "GET"
+          port: 80
+          headers:
+            Host: "localhost"
+            X-Scanner: "whatever"
+            uri: "/"
+        output:
+          log_contains: id "913110"

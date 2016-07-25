@@ -5,7 +5,7 @@
     enabled: true
     name: 921100.yaml
   tests:
-  - 
+  -
     test_title: 921100-1
     desc: HTTP Request Smuggling Attack (921100) from old modsec regressions
     stages:
@@ -28,7 +28,7 @@
           version: HTTP/1.0
         output:
           log_contains: id "921100"
-  - 
+  -
     test_title: 921100-2
     desc: HTTP Request Smuggling (921100) from old modsec regressions
     stages:
@@ -52,5 +52,21 @@
           uri: /
           version: HTTP/1.0
           data: abc
+        output:
+          log_contains: id "921100"
+  -
+    test_title: 921100-3
+    desc: "HTTP Request Smuggling Attack"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Transfer-Encoding: "fooo,sdfsdfsda"
+            User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv
+          method: POST
+          port: 80
+          uri: /
         output:
           log_contains: id "921100"

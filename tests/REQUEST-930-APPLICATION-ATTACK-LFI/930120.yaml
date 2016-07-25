@@ -80,3 +80,18 @@
           version: HTTP/1.1
         output:
           log_contains: id "930120"
+  -
+   test_title: 930120-4
+   desc: "OS File Access"
+   stages:
+   -
+     stage:
+       input:
+         dest_addr: "127.0.0.1"
+         method: "GET"
+         port: 80
+         headers:
+           Host: "localhost"
+         uri: "/?foo=arg&path_comp=.ssh/id_rsa"
+       output:
+         log_contains: "930120"
