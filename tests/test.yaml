@@ -6,18 +6,16 @@
     description: "This file contains example tests."
   tests: 
     - 
-      test_title: "Test1"
+      test_title: 920272-3
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
-              method: "GET"
               port: 80
+              uri: "/?test=test%FF1"
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
-              protocol: "http"
-              uri: "/"
             output: 
-              status: 200
+              log_contains: "id \"920272\""   
