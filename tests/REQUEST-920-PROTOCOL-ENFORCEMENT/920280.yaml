@@ -16,7 +16,7 @@
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests # HTTP 1.1 requires"
             output: 
-              log_contains: "id \"920280\""
+              no_log_contains: "id \"920280\""
     - 
       test_title: 920280-2
       stages: 

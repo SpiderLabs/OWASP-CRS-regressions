@@ -107,12 +107,14 @@
                   Keep-Alive: "300"
                   Proxy-Connection: "keep-alive"
                   Content-Type: "application/x-www-form-urlencoded"
+                  Content-Length: "9"
               data: "param=%1G"
+              stop_magic: true
             output: 
               log_contains: "id \"920240\""
     - 
       # test URL Encoding Abuse Attack Attempt from old regression tests
-      test_title: 920240-5
+      test_title: 920240-6
       stages: 
         - 
           stage: 
