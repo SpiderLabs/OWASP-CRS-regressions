@@ -48,3 +48,4 @@
           uri: "/file.jsp?somevar=foobar%0d%0aContent-Length:%2002343432423<html>ftw</html>"
           version: HTTP/1.1
         output:
+          log_contains: id "921120"
