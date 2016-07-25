@@ -2,12 +2,12 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920350"
-    description: "Description"
+    name: "920100.yaml"
+    description: "Tests to trigger, or not trigger 920100"
   tests: 
     - 
       # Standard GET request
-      rule_id: 920100-1
+      test_title: 920100-1
       stages: 
         - 
           stage: 
@@ -26,7 +26,7 @@
     - 
       # Request has tab (\t) before request method - Apache complains
       # AH00126: Invalid URI in request      GET / HTTP/1.1
-      rule_id: 920100-2
+      test_title: 920100-2
       stages: 
         - 
           stage: 
@@ -44,7 +44,7 @@
               status: 400           
     - 
       # Perfectly valid OPTIONS request
-      rule_id: 9201000-3
+      test_title: 920100-3
       stages: 
         - 
           stage: 
@@ -62,7 +62,7 @@
               no_log_contains: "id \"920100\""
     - 
       # Valid CONNECT request however this is disabled by Apache default
-      rule_id: 920100-4
+      test_title: 920100-4
       stages: 
         - 
           stage: 
@@ -80,7 +80,7 @@
               status: 405
     - 
       # invalid Connect request, domains require ports
-      rule_id: 920100-5
+      test_title: 920100-5
       stages: 
         - 
           stage: 
@@ -98,7 +98,7 @@
               status: 400
     - 
       # This is an acceptable CONNECT request for SSL tunneling
-      rule_id: 920100-6
+      test_title: 920100-6
       stages: 
         - 
           stage: 
@@ -116,7 +116,7 @@
               log_contains: "id \"920100\""             
     - 
       # Valid request with query and anchor components
-      rule_id: 920100-7
+      test_title: 920100-7
       stages: 
         - 
           stage: 
@@ -135,7 +135,7 @@
     - 
       # The colon in the path is not allowed. Apache will block by default
       # (20024)The given path is misformatted or contained invalid characters: [client 127.0.0.1:4142] AH00127: Cannot map GET /index.html:80?I=Like&Apples=Today#tag HTTP/1.1 to file
-      rule_id: 920100-8
+      test_title: 920100-8
       stages: 
         - 
           stage: 
@@ -153,7 +153,7 @@
               status: 403
     - 
       # Normal Options request with path
-      rule_id: 920100-9
+      test_title: 920100-9
       stages: 
         - 
           stage: 
@@ -171,7 +171,7 @@
               no_log_contains: "id \"920100\""   
     - 
       # An invalid method with a long name
-      rule_id: 920100-10
+      test_title: 920100-10
       stages: 
         - 
           stage: 
@@ -189,7 +189,7 @@
               log_contains: "id \"920100\""       
     - 
       # An invalid request because a backslash is used in uri
-      rule_id: 920100-11
+      test_title: 920100-11
       stages: 
         - 
           stage: 
@@ -203,4 +203,64 @@
               uri: "\\"
               version: "HTTP/1.1"
             output: 
-              log_contains: "id \"920100\""               
+              log_contains: "id \"920100\""
+    - 
+      test_title: 920100-12
+      desc: Invalid HTTP Request Line (920100) - Test 1 from old modsec regressions
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+              Host: localhost
+              Keep-Alive: '300'
+              Proxy-Connection: keep-alive
+              User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv
+            method: "\tGET"
+            port: 80
+            uri: /
+            version: HTTP/1.1
+          output:
+            status: 400
+    - 
+      test_title: 920100-13
+      desc: Invalid HTTP Request Line (920100) - Test 2 from old modsec regressions
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+              Host: localhost
+              Keep-Alive: '300'
+              Proxy-Connection: keep-alive
+              User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv
+            method: GET
+            port: 80
+            uri: \index.html
+            version: HTTP\1.0
+          output:
+            log_contains: id "920100"            
+    - 
+      test_title: 920100-14
+      desc: Invalid HTTP Request Line (920100) - Test 3 from old modsec regressions
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+              Host: localhost
+              Keep-Alive: '300'
+              Proxy-Connection: keep-alive
+              User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv
+            method: '|GET'
+            port: 80
+            uri: /
+            version: HTTP/1.0
+          output:
+            log_contains: id "920100"

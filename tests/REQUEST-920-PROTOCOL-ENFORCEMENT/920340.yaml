@@ -2,11 +2,11 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920340"
+    name: "920340.yaml"
     description: "Description"
   tests: 
     - 
-      rule_id: 920340
+      test_title: 920340-1
       stages: 
         - 
           stage: 
@@ -22,7 +22,7 @@
             output: 
               log_contains: "id \"920340\""
     - 
-      rule_id: 920340
+      test_title: 920340-2
       stages: 
         - 
           stage: 
@@ -35,6 +35,6 @@
                   Content-Length: "50"
               stop_magic: true
             output: 
-              status: 408              
+              expect_error: true              
 
 

@@ -2,92 +2,91 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-911100"
+    name: "920271.yaml"
     description: "Description"
   tests: 
     - 
-      rule_id: 911100
+      test_title: 920271-1
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
               port: 80
+              uri: "/?test=test1%127"
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
+                  User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
             output: 
-              log_contains: "id \"911100\""
+              log_contains: "id \"920271\""
     - 
-      rule_id: 911100
+      test_title: 920271-2
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
               port: 80
-              method: "OPTIONS"
+              uri: "/?test=test1%03"
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
+                  User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
             output: 
-              log_contains: "id \"911100\""
+              log_contains: "id \"920271\""
     - 
-      rule_id: 911100
+      test_title: 920271-3
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
               port: 80
+              uri: "/?test%00=test1"
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
+                  User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
             output: 
-              log_contains: "id \"911100\""
+              log_contains: "id \"920271\""
     - 
-      rule_id: 911100
+      test_title: 920271-4
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
-              method: "HEAD"
               port: 80
+              uri: "/?test=test1"
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
+                  User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
+                  Cookie: hi%13=bye
             output: 
-              log_contains: "id \"911100\""                                          
+              log_contains: "id \"920271\""      
     - 
-      rule_id: 911100
+      test_title: 920271-5
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
-              method: "POST"
               port: 80
+              uri: "/%20index.html?test=test1"
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
+                  User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
-                  Content-Type: "application/x-www-form-urlencoded"
-              data: "test=value"
             output: 
-              log_contains: "id \"911100\""  
+              no_log_contains: "id \"920271\""  
     - 
-      rule_id: 911100
+      test_title: 920271-6
       stages: 
         - 
           stage: 
             input:
               dest_addr: "127.0.0.1"
-              method: "TEST"
               port: 80
+              uri: "/%FFindex.html?test=test1"
               headers:
-                  User-Agent: "ModSecurity CRS 3 Tests"
+                  User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
             output: 
-              log_contains: "id \"911100\""                
-
-#   
+              no_log_contains: "id \"920271\""                  

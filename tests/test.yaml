@@ -2,11 +2,11 @@
   meta: 
     author: "csanders-git"
     enabled: true
-    name: "Tests-920350"
-    description: "Description"
+    name: "Example_Tests"
+    description: "This file contains example tests."
   tests: 
     - 
-      rule_id: 920350
+      test_title: "Test1"
       stages: 
         - 
           stage: 
@@ -16,8 +16,8 @@
               port: 80
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"              
-                  Host: "127.0.0.1"
+                  Host: "localhost"
               protocol: "http"
               uri: "/"
             output: 
-              log_contains: "id \"920350\""
+              status: 200
