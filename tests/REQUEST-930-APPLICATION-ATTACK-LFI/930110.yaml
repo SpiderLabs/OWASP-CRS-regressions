@@ -1,0 +1,23 @@
+---
+  meta: 
+    author: "Christian S.J. Peron"
+    enabled: true
+    name: "930110.yaml"
+    description: "Application attacks: Local file include"
+  tests: 
+    -
+      test_title: 930110-1
+      desc: "Path Traversal Attack (/../)"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  FoobarHeader: "/../../../././..\\ ../../etc/master.passwd"
+              uri: "/"
+            output:
+              log_contains: id "930110"
