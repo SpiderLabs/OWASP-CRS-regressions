@@ -7,8 +7,7 @@
   tests:
   - 
     test_title: 913100-1
-    desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec
-      regressions
+    desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec regressions
     stages:
     - 
       stage:
@@ -32,8 +31,7 @@
           log_contains: id "913100"
   - 
     test_title: 913100-2
-    desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec
-      regressions
+    desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec regressions
     stages:
     - 
       stage:
@@ -57,8 +55,7 @@
 
   - 
     test_title: 913100-3
-    desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec
-      regressions
+    desc: Request Indicates a Security Scanner Scanned the Site (913100) from old modsec regressions
     stages:
     - 
       stage:
@@ -79,19 +76,19 @@
           version: HTTP/1.0
         output:
           log_contains: id "913100"
+  -
+    test_title: 913100-4
+    desc: "Scanner identification based on User-agent field"
+    stages:
     -
-      test_title: 913100-4
-      desc: "Scanner identification based on User-agent field"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              method: "GET"
-              port: 80
-              headers:
-                  Host: "localhost"
-                  User-agent: "nessus"
-              uri: "/"
-            output:
-              log_contains: id "913100"
+      stage:
+        input:
+          dest_addr: "127.0.0.1"
+          method: "GET"
+          port: 80
+          headers:
+            Host: "localhost"
+            User-agent: "nessus"
+          uri: "/"
+        output:
+          log_contains: id "913100"

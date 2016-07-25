@@ -45,18 +45,19 @@
           version: HTTP/1.0
         output:
           log_contains: id "913120"          
+  -
+    test_title: 913120-3
+    desc: "Scanner identification based on uri"
+    stages:
     -
-      test_title: 913120-3
-      desc: "Scanner identification based on uri:"
-      stages:
-        -
-          stage:
-            input:
-              dest_addr: "127.0.0.1"
-              method: "GET"
-              port: 80
-              headers:
-                  Host: "localhost"
-              uri: "/nessustest"
-            output:
-              log_contains: id "913120"
+      stage:
+        input:
+          dest_addr: "127.0.0.1"
+          method: "GET"
+          port: 80
+          headers:
+            Host: "localhost"
+            version: HTTP/1.0
+          uri: "/nessus_is_probing_you_"
+        output:
+          log_contains: id "913120"
