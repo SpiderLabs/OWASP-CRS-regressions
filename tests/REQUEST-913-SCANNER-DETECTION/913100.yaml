@@ -79,3 +79,19 @@
           version: HTTP/1.0
         output:
           log_contains: id "913100"
+    -
+      test_title: 913100-4
+      desc: "Scanner identification based on User-agent field"
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              method: "GET"
+              port: 80
+              headers:
+                  Host: "localhost"
+                  User-agent: "nessus"
+              uri: "/"
+            output:
+              log_contains: id "913100"

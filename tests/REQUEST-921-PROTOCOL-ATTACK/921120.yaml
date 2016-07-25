@@ -30,3 +30,21 @@
           version: HTTP/1.1
         output:
           log_contains: id "921120"
+  -
+    test_title: 921120-2
+    desc: "HTTP Response splitting attack"
+    stages:
+    -
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            Proxy-Connection: keep-alive
+            Referer: http
+            User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+          method: GET
+          port: 80
+          uri: "/file.jsp?somevar=foobar%0d%0aContent-Length:%2002343432423<html>ftw</html>"
+          version: HTTP/1.1
+        output:
