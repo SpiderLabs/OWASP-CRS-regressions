@@ -1,0 +1,58 @@
+---
+  meta: 
+    author: "zmallen"
+    enabled: true
+    name: "941120.yaml"
+    description: "Tests to trigger, or not trigger 941120"
+  tests: 
+    - 
+      test_title: 941120-1
+      desc: 'GET arg, body onload XSS'
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/bar'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+            data: '941120-1=<body onload="alert(1)">'
+          output:
+            log_contains: 'Matched Data:  onload= found within ARGS:941120-1'
+    - 
+      test_title: 941120-2
+      desc: 'GET argnames, body onload XSS'
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET 
+            port: 80
+            uri: '/foo'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+            data: '%20%20onload%3d%20=941120-2'
+          output:
+            log_contains: '"Matched Data:   onload= found within ARGS_NAMES:  onload= :   onload= "'
+    - 
+      test_title: 941120-3
+      desc: 'body onload XSS cookiename'
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET 
+            port: 80
+            uri: '/foo'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+              Cookie: '%20%20onload%3d%20=941120-3'
+          output:
+            log_contains: '"Matched Data:   onload= found within REQUEST_COOKIES_NAMES:%20%20onload%3d%20:   onload= "'
