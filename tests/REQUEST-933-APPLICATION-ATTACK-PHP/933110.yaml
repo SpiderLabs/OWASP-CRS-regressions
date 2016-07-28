@@ -1,0 +1,274 @@
+---
+  meta:
+    author: lifeforms
+    description: None
+    enabled: true
+    name: 933110.yaml
+  tests:
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /
+        output:
+          no_log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload1
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload2
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload3
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload4
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /
+        output:
+          no_log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload5
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload6
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload7
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload8
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /upload
+        output:
+          log_contains: id "933110"
+  - 
+    test_title: 933110-1
+    desc: PHP script uploads
+    stages:
+    - stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: ModSecurity CRS 3 Tests
+          port: 80
+          uri: /
+        output:
+          no_log_contains: id "933110"
+  
