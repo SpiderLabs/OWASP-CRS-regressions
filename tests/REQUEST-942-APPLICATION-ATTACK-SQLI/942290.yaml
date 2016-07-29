@@ -22,7 +22,7 @@
         output:
           log_contains: id "942290"
   -
-    test_title: 942290-1
+    test_title: 942290-2
     desc: "basic MongoDB SQL injection attempts"
     stages:
     - 
