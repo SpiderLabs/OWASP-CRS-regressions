@@ -1,24 +1,89 @@
----
-  meta:
-    author: "Christian S.J. Peron"
-    description: None
+  meta: 
+    author: "csanders-git"
     enabled: true
-    name: 941120.yaml
-  tests:
-  - 
-    test_title: 941120-1
-    desc: "XSS Filter - Category 2: Event Handler Vector"
-    stages:
+    name: "941110.yaml"
+    description: "Tests to trigger, or not trigger 941110"
+  tests: 
     - 
-      stage:
-        input:
-          dest_addr: 127.0.0.1
-          headers:
-            Host: localhost
-          method: POST
-          port: 80
-          uri: "/?%20%20onload%3d%20=vardata"
-          #data: "%20%20onload%3d%20=vardata"
-          version: HTTP/1.0
-        output:
-          log_contains: id "941120"
+      test_title: 941110-1
+      desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+              Cookie: xyz=<script >alert(1);</script>
+          output:
+            log_contains: id "941110" 
+    - 
+      test_title: 941110-2
+      desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/?x=<script >alert(1);</script>'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+          output:
+            no_log_contains: id "941110"    
+    - 
+      test_title: 941110-3
+      desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: "<script >alert(1);</script>"
+              Host: localhost
+          output:
+            log_contains: id "941110"        
+    - 
+      test_title: 941110-4
+      desc: Test as described in http://www.client9.com/article/five-interesting-injection-attacks/
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+              Referer: "<script >alert(1);</script>"
+          output:
+            log_contains: id "941110"                      
+    -
+     test_title: 941120-5
+     desc: "XSS Filter - Category 2: Event Handler Vector"
+     stages:
+     -
+       stage:
+         input:
+           dest_addr: 127.0.0.1
+           headers:
+             Host: localhost
+           method: POST
+           port: 80
+           uri: "/?%20%20onload%3d%20=vardata"
+           #data: "%20%20onload%3d%20=vardata"
+           version: HTTP/1.0
+         output:
+           log_contains: id "941120"
