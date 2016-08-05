@@ -71,6 +71,3 @@
               Referer: "<script >alert(1);</script>"
           output:
             log_contains: id "941110"                      
-            
-            
-            
