@@ -64,7 +64,7 @@
 
     - 
       test_title: 920450-5
-      desc: HTTP header is restricted by policy (920450) from old modsec regressions
+      desc: HTTP header is restricted by policy (920450) from old modsec regressions, we no longer block proxy-connection in 3.0
       stages:
       - 
         stage:
@@ -84,7 +84,7 @@
             uri: /
             version: HTTP/1.1
           output:
-            log_contains: id "920450"
+            no_log_contains: id "920450"
 
     - 
       test_title: 920450-6
@@ -135,4 +135,19 @@
             version: HTTP/1.1
           output:
             log_contains: id "920450"
+    -
+      test_title: 920450-8
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "ModSecurity CRS 3 Tests"
+                  Host: "localhost"
+                  Range: "test"
+            output:
+              no_log_contains: "id \"920450\""
+
               
