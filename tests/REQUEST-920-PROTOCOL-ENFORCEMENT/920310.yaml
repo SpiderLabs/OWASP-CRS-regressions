@@ -47,5 +47,47 @@
                   Host: "localhost"
                   Accept: ""
             output: 
-              no_log_contains: "id \"920310\""                     
-  
+              no_log_contains: "id \"920310\""                    
+    -
+      test_title: 920310-4
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: lol
+                  Host: "localhost"
+                  Accept: ""
+            output:
+              log_contains: "id \"920310\""
+ 
+    -
+      test_title: 920310-5
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "Business/6.6.1.2 CFNetwork/758.5.3 Darwin/15.6.0"
+                  Host: "localhost"
+                  Accept: ""
+            output:
+              no_log_contains: "id \"920310\""
+    -
+      test_title: 920310-6
+      stages:
+        -
+          stage:
+            input:
+              dest_addr: "127.0.0.1"
+              port: 80
+              headers:
+                  User-Agent: "Entreprise/6.5.0.177 CFNetwork/758.4.3 Darwin/15.5.0"
+                  Host: "localhost"
+                  Accept: ""
+            output:
+              no_log_contains: "id \"920310\""
