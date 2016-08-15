@@ -3,11 +3,11 @@
     author: "Christian S.J. Peron"
     description: None
     enabled: true
-    name: 941120.yaml
+    name: 942110.yaml
   tests:
   - 
-    test_title: 941120-1
-    desc: "XSS Filter - Category 2: Event Handler Vector"
+    test_title: 942110-1
+    desc: "Common SQL Injection Testing"
     stages:
     - 
       stage:
@@ -17,8 +17,8 @@
             Host: localhost
           method: POST
           port: 80
-          uri: "/?%20%20onload%3d%20=vardata"
-          #data: "%20%20onload%3d%20=vardata"
+          # NB: false positives: /?var=\'\'
+          data: "var=%27%27"
           version: HTTP/1.0
         output:
-          log_contains: id "941120"
+          log_contains: id "942110"
