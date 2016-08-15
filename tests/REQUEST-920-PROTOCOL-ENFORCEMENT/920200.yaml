@@ -75,23 +75,9 @@
                   Host: "localhost"
                   Range: "bytes=1-,11-20, 21-30,31-40,41-50,51-500"
             output: 
-              log_contains: "id \"920200\""
+              log_contains: "id \"920200\""       
     - 
       test_title: 920200-6
-      stages: 
-        - 
-          stage: 
-            input:
-              dest_addr: "127.0.0.1"
-              port: 80
-              headers:
-                  User-Agent: "ModSecurity CRS 3 Tests #FP"              
-                  Host: "localhost"
-                  Request-Range: "bytes=1-,11-20, 21-30,31-40,41-50,51-500"
-            output: 
-              log_contains: "id \"920200\""         
-    - 
-      test_title: 920200-7
       desc: 'Range: Too many fields (920200) from old modsec regressions'
       stages:
       - 
@@ -115,7 +101,7 @@
           output:
             log_contains: id "920200"
     - 
-      test_title: 920200-8
+      test_title: 920200-7
       desc: This should PASS (PL2)
       stages:
       - 
@@ -132,7 +118,7 @@
           output:
             no_log_contains: id "920200"            
     - 
-      test_title: 920200-9
+      test_title: 920200-8
       desc: "This should FAIL with rule 920200 (PL2)"
       stages:
       - 
@@ -149,7 +135,7 @@
           output:
             log_contains: id "920200"  
     - 
-      test_title: 920200-10
+      test_title: 920200-9
       desc: This should PASS (PL2)
       stages:
       - 
@@ -166,7 +152,7 @@
           output:
             no_log_contains: id "920200"
     - 
-      test_title: 920200-11
+      test_title: 920200-10
       desc: This should PASS (PL2)
       stages:
       - 
@@ -183,7 +169,7 @@
           output:
             no_log_contains: id "920200"              
     - 
-      test_title: 920200-12
+      test_title: 920200-11
       desc: This should FAIL with rule 920201 (PL2)
       stages:
       - 
@@ -200,7 +186,7 @@
           output:
             log_contains: id "920201"
     - 
-      test_title: 920200-13
+      test_title: 920200-12
       desc: This should FAIL with rule 920202 (PL4)
       stages:
       - 
