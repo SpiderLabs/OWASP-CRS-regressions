@@ -45,7 +45,7 @@
               headers:
                   User-Agent: "ModSecurity CRS 3 Tests"              
                   Host: "localhost"
-                  Range: "bytes=1-10,   11-20, 21-30,   31-40, 41-50, 51-60"
+                  Range: "bytes=1-10,   11-20, 21-30,   31-40, 41-50"
             output: 
               no_log_contains: "id \"920200\""              
     - 
