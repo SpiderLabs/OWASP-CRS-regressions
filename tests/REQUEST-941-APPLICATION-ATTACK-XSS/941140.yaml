@@ -21,7 +21,7 @@
               Host: localhost
             data: '9411400-1=%3Cp%20style%3D%22background%3Aurl(javascript%3Aalert(1))%22%3E'
           output:
-            log_contains: '[data "Matched Data: =\\x22background:url(javascript: found within ARGS:9411400-1: <p style=\\x22background:url(javascript:alert(1))\\x22>"]'
+            log_contains: id "941140"
     - 
       test_title: 941140-2
       desc: XSS vectors making use of javascript uri and tags, e.g., <p style="background:url(javascript:alert(1))">, in ARGS_NAMES 
@@ -38,7 +38,7 @@
               Host: localhost
             data: '%3Cp%20style%3D%22background%3Aurl(javascript%3Aalert(1))%22%3E=941140-2'
           output:
-            log_contains: '[data "Matched Data: =\\x22background:url(javascript: found within ARGS_NAMES:<p style=\\x22background:url(javascript:alert(1))\\x22>: <p style=\\x22background:url(javascript:alert(1))\\x22>"]'
+            log_contains: id "941140"
     - 
       test_title: 941140-3
       desc: XSS vectors making use of javascript uri and tags, e.g., <p style="background:url(javascript:alert(1))">, in COOKIE 
@@ -55,4 +55,4 @@
               Host: localhost
               Cookie: '%3Cp%20style%3D%22background%3Aurl(javascript%3Aalert(1))%22%3E=941140-2'
           output:
-            log_contains: '[data "Matched Data: =\\x22background:url(javascript: found within REQUEST_COOKIES_NAMES:%3Cp%20style%3D%22background%3Aurl(javascript%3Aalert(1))%22%3E: <p style=\\x22background:url(javascript:alert(1))\\x22>"]'
+            log_contains: id "941140"

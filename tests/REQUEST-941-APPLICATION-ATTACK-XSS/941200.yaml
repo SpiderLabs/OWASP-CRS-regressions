@@ -21,7 +21,7 @@
               Host: localhost
             data: '941200-1=%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E'
           output:
-            log_contains: '[data "Matched Data: <v:vmlframe src= found within ARGS:941200-1: <v:vmlframe src=\\\\x22foo.com/sup.fml\\\\x22/>"]'
+            log_contains: id "941200"
     - 
       test_title: 941200-2
       desc: Microsoft vmlframe xss, ARGS_NAMES 
@@ -38,7 +38,7 @@
               Host: localhost
             data: '%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E=941200-2'
           output:
-            log_contains: '[data "Matched Data: <v:vmlframe src= found within ARGS_NAMES:<v:vmlframe src=\\\\x22foo.com/sup.fml\\\\x22/>: <v:vmlframe src=\\\\x22foo.com/sup.fml\\\\x22/>"]'
+            log_contains: id "941200"
     - 
       test_title: 941200-3
       desc: Microsoft vmlframe xss, REQUEST_COOKIE_NAMES 
@@ -55,4 +55,4 @@
               Host: localhost
               Cookie: '%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E=941200-3'
           output:
-            log_contains: '[data "Matched Data: <v:vmlframe src= found within REQUEST_COOKIES_NAMES:%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E: <v:vmlframe src=\\\\x22foo.com/sup.fml\\\\x22/>"]'
+            log_contains: id "941200"

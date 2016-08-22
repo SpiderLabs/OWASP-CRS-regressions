@@ -21,7 +21,7 @@
               Host: localhost
             data: '941180-1=window.location'
           output:
-            log_contains: '[data "Matched Data: window.location found within ARGS:941180-1: window.location"]'
+            log_contains: id "941180"
     - 
       test_title: 941180-2
       desc: Node-validator blacklist keywords, ARGS_NAMES 
@@ -38,7 +38,7 @@
               Host: localhost
             data: 'document.cookie=941180-2'
           output:
-            log_contains: '[data "Matched Data: document.cookie found within ARGS_NAMES:document.cookie: document.cookie"]'
+            log_contains: id "941180"
     - 
       test_title: 941180-3
       desc: Node-validator blacklist keywords, ARGS_NAMES 
@@ -55,4 +55,4 @@
               Host: localhost
               Cookie: 'window.location=941180-3'
           output:
-            log_contains: '[data "Matched Data: window.location found within REQUEST_COOKIES_NAMES:window.location: window.location"]'
+            log_contains: id "941180"

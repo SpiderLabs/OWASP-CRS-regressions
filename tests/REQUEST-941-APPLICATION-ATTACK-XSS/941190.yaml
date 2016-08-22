@@ -21,7 +21,7 @@
               Host: localhost
             data: '941190-1=window.location'
           output:
-            log_contains: '129031203'
+            log_contains: id "941190"
     - 
       test_title: 941190-2
       desc: Node-validator blacklist keywords, ARGS_NAMES 
@@ -38,7 +38,7 @@
               Host: localhost
             data: 'document.cookie=941190-2'
           output:
-            log_contains: 'adnasdni'
+            log_contains: id "941190"
     - 
       test_title: 941190-3
       desc: Node-validator blacklist keywords, COOKIES_NAMES
@@ -55,4 +55,4 @@
               Host: localhost
               Cookie: 'window.location=941190-3'
           output:
-            log_contains: 'asdo'
+            log_contains: id "941190"

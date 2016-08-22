@@ -21,7 +21,7 @@
               Host: localhost
             data: '941210-1=ja%26tab%3Bvascript%3A%20'
           output:
-            log_contains: '[data "Matched Data: ja&tab;vascript:  found within ARGS:941210-1: ja&tab;vascript: "]'
+            log_contains: id "941210"
     - 
       test_title: 941210-2
       desc: Obfuscated javascript tag in ARGS_NAMES, with tab
@@ -38,7 +38,7 @@
               Host: localhost
             data: 'ja%26tab%3Bvascript%3A%09=941210-2'
           output:
-            log_contains: '[data "Matched Data: ja&tab;vascript:\\\\x09 found within ARGS_NAMES:ja&tab;vascript:\\\\x5ct: ja&tab;vascript:\\\\x09"]'
+            log_contains: id "941210"
     - 
       test_title: 941210-3
       desc: Microsoft vmlframe xss, REQUEST_COOKIE_NAMES 
@@ -55,4 +55,4 @@
               Host: localhost
               Cookie: 'ja%26newline%3Bvascript%3A%20=941210-3'
           output:
-            log_contains: '[data "Matched Data: ja&newline;vascript:  found within REQUEST_COOKIES_NAMES:ja%26newline%3Bvascript%3A%20: ja&newline;vascript: "]'
+            log_contains: id "941210"
