@@ -1,0 +1,25 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    description: None
+    enabled: true
+    name: 941140.yaml
+  tests:
+  - 
+    test_title: 941140-1
+    desc: "XSS Filter - Category 4: Javascript URI Vector"
+    stages:
+    - 
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: "localhost"
+            Cache-Control: "no-cache, no-store, must-revalidate"
+            User-agent: "<embed type=%22video/quicktime%22 src=%22movie.mov%22 width=%22640%22 height=%22480%22>"
+          method: POST
+          port: 80
+          data: "var=foo"
+          version: HTTP/1.0
+        output:
+          log_contains: id "941140"
