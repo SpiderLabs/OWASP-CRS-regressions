@@ -1,0 +1,24 @@
+---
+  meta:
+    author: "Christian S.J. Peron"
+    description: None
+    enabled: true
+    name: 941180.yaml
+  tests:
+  - 
+    test_title: 941180-1
+    desc: "Node-Validator Blacklist Keywords"
+    stages:
+    - 
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: "localhost"
+            Cache-Control: "no-cache, no-store, must-revalidate"
+          method: GET
+          port: 80
+          uri: "/?var=document.cookie"
+          version: HTTP/1.0
+        output:
+          log_contains: id "941180"
