@@ -1,6 +1,7 @@
 import pytest
 from ftw import ruleset, util
 import os
+import time
 
 def get_rulesets(ruledir, recurse):
     """
@@ -45,9 +46,9 @@ def test_id(val):
     if isinstance(val, (dict,ruleset.Test,)):
         # We must be carful here because errors are swallowed and defaults returned
         if 'name' in val.ruleset_meta.keys():
-            return '%s -- %s' % (val.ruleset_meta['name'], val.test_title)
+            return '%d %s -- %s' % (time.time(), val.ruleset_meta['name'], val.test_title)
         else:
-            return '%s -- %s' % ("Unnamed_Test", val.test_title)
+            return '%d %s -- %s' % (time.time(), "Unnamed_Test", val.test_title)
 
 
 @pytest.fixture
