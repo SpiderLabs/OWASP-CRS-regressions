@@ -54,7 +54,7 @@
         output:
           log_contains: id "933161"
   - 
-    test_title: 933161-1
+    test_title: 933161-3
     desc: dl/*foo*/()
     stages:
     - stage:
@@ -70,7 +70,7 @@
         output:
           log_contains: id "933161"
   - 
-    test_title: 933161-1
+    test_title: 933161-4
     desc: dl/*foo*/()
     stages:
     - stage:
@@ -85,4 +85,3 @@
           uri: /?foo=xucfirst%28%29
         output:
           no_log_contains: id "933161"
-  
