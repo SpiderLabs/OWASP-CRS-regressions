@@ -1,25 +1,58 @@
 ---
-  meta:
-    author: "Christian S.J. Peron"
-    description: None
+  meta: 
+    author: "zmallen"
     enabled: true
-    name: 941140.yaml
-  tests:
-  - 
-    test_title: 941140-1
-    desc: "XSS Filter - Category 4: Javascript URI Vector"
-    stages:
+    name: "941140.yaml"
+    description: "Tests to trigger, or not trigger 941130"
+  tests: 
     - 
-      stage:
-        input:
-          dest_addr: 127.0.0.1
-          headers:
-            Host: "localhost"
-            Cache-Control: "no-cache, no-store, must-revalidate"
-            User-agent: "<embed type=%22video/quicktime%22 src=%22movie.mov%22 width=%22640%22 height=%22480%22>"
-          method: POST
-          port: 80
-          data: "var=foo"
-          version: HTTP/1.0
-        output:
-          log_contains: id "941140"
+      test_title: 941140-1
+      desc: XSS vectors making use of javascript uri and tags, e.g., <p style="background:url(javascript:alert(1))">, in ARGS 
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/foo'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+            data: '9411400-1=%3Cp%20style%3D%22background%3Aurl(javascript%3Aalert(1))%22%3E'
+          output:
+            log_contains: id "941140"
+    - 
+      test_title: 941140-2
+      desc: XSS vectors making use of javascript uri and tags, e.g., <p style="background:url(javascript:alert(1))">, in ARGS_NAMES 
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/bar'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+            data: '%3Cp%20style%3D%22background%3Aurl(javascript%3Aalert(1))%22%3E=941140-2'
+          output:
+            log_contains: id "941140"
+    - 
+      test_title: 941140-3
+      desc: XSS vectors making use of javascript uri and tags, e.g., <p style="background:url(javascript:alert(1))">, in COOKIE 
+      stages:
+      - 
+        stage:
+          input:
+            dest_addr: 127.0.0.1
+            method: GET
+            port: 80
+            uri: '/bar'
+            headers:
+              User-Agent: ModSecurity CRS 3 Tests
+              Host: localhost
+              Cookie: '%3Cp%20style%3D%22background%3Aurl(javascript%3Aalert(1))%22%3E=941140-2'
+          output:
+            log_contains: id "941140"

@@ -2,11 +2,11 @@
   meta: 
     author: "zmallen"
     enabled: true
-    name: "941180.yaml"
-    description: "Tests to trigger, or not trigger 941180"
+    name: "941190.yaml"
+    description: "Tests to trigger, or not trigger 941190"
   tests: 
     - 
-      test_title: 941180-1
+      test_title: 941190-1
       desc: Node-validator blacklist keywords, ARGS 
       stages:
       - 
@@ -19,11 +19,11 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-            data: '941180-1=window.location'
+            data: '941190-1=window.location'
           output:
-            log_contains: id "941180"
+            log_contains: id "941190"
     - 
-      test_title: 941180-2
+      test_title: 941190-2
       desc: Node-validator blacklist keywords, ARGS_NAMES 
       stages:
       - 
@@ -36,12 +36,12 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-            data: 'document.cookie=941180-2'
+            data: 'document.cookie=941190-2'
           output:
-            log_contains: id "941180"
+            log_contains: id "941190"
     - 
-      test_title: 941180-3
-      desc: Node-validator blacklist keywords, ARGS_NAMES 
+      test_title: 941190-3
+      desc: Node-validator blacklist keywords, COOKIES_NAMES
       stages:
       - 
         stage:
@@ -53,6 +53,6 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-              Cookie: 'window.location=941180-3'
+              Cookie: 'window.location=941190-3'
           output:
-            log_contains: id "941180"
+            log_contains: id "941190"

@@ -2,12 +2,12 @@
   meta: 
     author: "zmallen"
     enabled: true
-    name: "941180.yaml"
-    description: "Tests to trigger, or not trigger 941180"
+    name: "941210.yaml"
+    description: "Tests to trigger, or not trigger 941210. This checks for abuses of javascript: with different encodings/html etc"
   tests: 
     - 
-      test_title: 941180-1
-      desc: Node-validator blacklist keywords, ARGS 
+      test_title: 941210-1
+      desc: Obsfucated javascript tag in GET data, ARGS 
       stages:
       - 
         stage:
@@ -19,12 +19,12 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-            data: '941180-1=window.location'
+            data: '941210-1=ja%26tab%3Bvascript%3A%20'
           output:
-            log_contains: id "941180"
+            log_contains: id "941210"
     - 
-      test_title: 941180-2
-      desc: Node-validator blacklist keywords, ARGS_NAMES 
+      test_title: 941210-2
+      desc: Obfuscated javascript tag in ARGS_NAMES, with tab
       stages:
       - 
         stage:
@@ -36,12 +36,12 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-            data: 'document.cookie=941180-2'
+            data: 'ja%26tab%3Bvascript%3A%09=941210-2'
           output:
-            log_contains: id "941180"
+            log_contains: id "941210"
     - 
-      test_title: 941180-3
-      desc: Node-validator blacklist keywords, ARGS_NAMES 
+      test_title: 941210-3
+      desc: Microsoft vmlframe xss, REQUEST_COOKIE_NAMES 
       stages:
       - 
         stage:
@@ -53,6 +53,6 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-              Cookie: 'window.location=941180-3'
+              Cookie: 'ja%26newline%3Bvascript%3A%20=941210-3'
           output:
-            log_contains: id "941180"
+            log_contains: id "941210"

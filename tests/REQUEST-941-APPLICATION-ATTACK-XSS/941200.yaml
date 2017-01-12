@@ -2,12 +2,12 @@
   meta: 
     author: "zmallen"
     enabled: true
-    name: "941180.yaml"
-    description: "Tests to trigger, or not trigger 941180"
+    name: "941200.yaml"
+    description: "Tests to trigger, or not trigger 941200"
   tests: 
     - 
-      test_title: 941180-1
-      desc: Node-validator blacklist keywords, ARGS 
+      test_title: 941200-1
+      desc: Microsoft vmlframe xss, ARGS 
       stages:
       - 
         stage:
@@ -19,12 +19,12 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-            data: '941180-1=window.location'
+            data: '941200-1=%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E'
           output:
-            log_contains: id "941180"
+            log_contains: id "941200"
     - 
-      test_title: 941180-2
-      desc: Node-validator blacklist keywords, ARGS_NAMES 
+      test_title: 941200-2
+      desc: Microsoft vmlframe xss, ARGS_NAMES 
       stages:
       - 
         stage:
@@ -36,12 +36,12 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-            data: 'document.cookie=941180-2'
+            data: '%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E=941200-2'
           output:
-            log_contains: id "941180"
+            log_contains: id "941200"
     - 
-      test_title: 941180-3
-      desc: Node-validator blacklist keywords, ARGS_NAMES 
+      test_title: 941200-3
+      desc: Microsoft vmlframe xss, REQUEST_COOKIE_NAMES 
       stages:
       - 
         stage:
@@ -53,6 +53,6 @@
             headers:
               User-Agent: ModSecurity CRS 3 Tests
               Host: localhost
-              Cookie: 'window.location=941180-3'
+              Cookie: '%3Cv%3Avmlframe%20src%3D%22foo.com%2Fsup.fml%22%2F%3E=941200-3'
           output:
-            log_contains: id "941180"
+            log_contains: id "941200"
