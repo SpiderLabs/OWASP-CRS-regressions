@@ -20,7 +20,7 @@
         output:
           no_log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-2
     desc: PHP script uploads
     stages:
     - stage:
@@ -34,7 +34,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-3
     desc: PHP script uploads
     stages:
     - stage:
@@ -48,7 +48,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-4
     desc: PHP script uploads
     stages:
     - stage:
@@ -62,7 +62,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-5
     desc: PHP script uploads
     stages:
     - stage:
@@ -76,7 +76,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-6
     desc: PHP script uploads
     stages:
     - stage:
@@ -90,7 +90,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-7
     desc: PHP script uploads
     stages:
     - stage:
@@ -104,7 +104,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-8
     desc: PHP script uploads
     stages:
     - stage:
@@ -118,7 +118,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-9
     desc: PHP script uploads
     stages:
     - stage:
@@ -132,7 +132,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-10
     desc: PHP script uploads
     stages:
     - stage:
@@ -146,7 +146,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-11
     desc: PHP script uploads
     stages:
     - stage:
@@ -160,7 +160,7 @@
         output:
           no_log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-12
     desc: PHP script uploads
     stages:
     - stage:
@@ -174,7 +174,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-13
     desc: PHP script uploads
     stages:
     - stage:
@@ -188,7 +188,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-14
     desc: PHP script uploads
     stages:
     - stage:
@@ -202,7 +202,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-15
     desc: PHP script uploads
     stages:
     - stage:
@@ -216,7 +216,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-16
     desc: PHP script uploads
     stages:
     - stage:
@@ -230,7 +230,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-17
     desc: PHP script uploads
     stages:
     - stage:
@@ -244,7 +244,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-18
     desc: PHP script uploads
     stages:
     - stage:
@@ -258,7 +258,7 @@
         output:
           log_contains: id "933110"
   - 
-    test_title: 933110-1
+    test_title: 933110-19
     desc: PHP script uploads
     stages:
     - stage:
@@ -271,4 +271,3 @@
           uri: /
         output:
           no_log_contains: id "933110"
-  

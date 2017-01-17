@@ -6,7 +6,7 @@
     name: 942250.yaml
   tests:
   - 
-    test_title: 942230-1
+    test_title: 942250-1
     desc: "MATCH AGAINST, MERGE and EXECUTE IMMEDIATE injection"
     stages:
     - 

@@ -31,7 +31,7 @@
         output:
           log_contains: id "931120"
   - 
-    test_title: 931120-1
+    test_title: 931120-2
     desc: Remote File Inclusion Attack (931120) from old modsec regressions
     stages:
     - 
@@ -56,7 +56,7 @@
         output:
           log_contains: id "931120"
   - 
-    test_title: 931120-1
+    test_title: 931120-3
     desc: Remote File Inclusion Attack (931120) from old modsec regressions
     stages:
     - 
