@@ -21,3 +21,19 @@
             Host: localhost
         output:
           log_contains: id "942290"
+  -
+    test_title: 942290-2
+    desc: "basic MongoDB SQL injection attempts"
+    stages:
+    - 
+      stage:
+        input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+          method: GET
+          port: 80
+          uri: "/?mongoQ=%5b%24lte%5dasdfsd"
+          version: HTTP/1.0
+        output:
+          log_contains: id "942290"

@@ -35,9 +35,9 @@ class FooLogChecker(logchecker.LogChecker):
         config.read("settings.ini")
         log_location = config.get('settings', 'log_location')
         our_logs = []
+        pattern = re.compile(r"\[([A-Z][a-z]{2} [A-z][a-z]{2} \d{1,2} \d{1,2}\:\d{1,2}\:\d{1,2}\.\d+? \d{4})\]")
         for lline in self.reverse_readline(log_location):
             # Extract dates from each line
-            pattern = re.compile(r"\[([A-Z][a-z]{2} [A-z][a-z]{2} \d{1,2} \d{1,2}\:\d{1,2}\:\d{1,2}\.\d+? \d{4})\]")
             match = re.match(pattern,lline)
             if match:
                 log_date = match.group(1)

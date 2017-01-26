@@ -30,7 +30,7 @@
           log_contains: id "920440"
 
   - 
-    test_title: 920440-1
+    test_title: 920440-2
     desc: URL file extension is restricted by policy (920440) from old modsec regressions
     stages:
     - 
@@ -53,7 +53,7 @@
         output:
           log_contains: id "920440"
   - 
-    test_title: 920440-1
+    test_title: 920440-3
     desc: URL file extension is restricted by policy (920440) from old modsec regressions
     stages:
     - 
