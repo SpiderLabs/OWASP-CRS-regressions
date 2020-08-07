@@ -1,3 +1,5 @@
+:warning: *NOTE: This project is no longer maintained at this location, please refer to https://github.com/coreruleset/ftw instead.*
+
 =====================
 OWASP-CRS-regressions
 =====================
